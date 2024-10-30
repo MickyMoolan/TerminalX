@@ -1,0 +1,435 @@
+/* General styling */
+body {
+    background-color: #0b0b0b;
+    color: #e0e0e0;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Dark-themed scrollbar */
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #444444;
+    border-radius: 5px;
+    border: 2px solid #1a1a1a;
+}
+
+/* Container styling */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #141414;
+    box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+/* Header styling */
+header {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    font-size: 2.4em;
+    color: #29abe2;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.1em;
+    color: #cccccc;
+    margin-top: 10px;
+    font-weight: 400;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Scarcity message styling */
+.scarcity-message {
+    background-color: #262626;
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #ff0000;
+    margin: 20px 0;
+    text-align: center;
+    animation: pulse-border 1.8s infinite;
+    font-weight: 600;
+}
+
+/* Floating tweet container */
+.tweet-animation-container {
+    position: fixed;
+    top: 0;
+    width: 500px; /* Width of each tweet animation container */
+    height: 100vh;
+    pointer-events: none;
+    z-index: 3;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.tweet-animation-container.left {
+    left: 0;
+}
+
+.tweet-animation-container.right {
+    right: 0;
+}
+
+.tweet-image {
+    position: absolute;
+    width: 450px; /* Size of each tweet */
+    opacity: 0;
+    animation: fall 8s linear forwards; /* Smooth, consistent flow */
+    transform-origin: center;
+}
+
+
+
+/* Keyframe animation for a consistent "river" effect */
+@keyframes fall {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%) rotate(var(--tilt-angle));
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(0) rotate(var(--tilt-angle));
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(100vh) rotate(var(--tilt-angle));
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100vh) rotate(var(--tilt-angle));
+    }
+}
+
+
+/* Rotation for left and right tweets */
+.left-tweet {
+    transform: rotate(-8deg); /* Adjust left-side tilt angle here */
+}
+
+.right-tweet {
+    transform: rotate(8deg); /* Adjust right-side tilt angle here */
+}
+
+/* Video container styling */
+.video-container {
+    margin: 20px 0;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 420px;
+    border-radius: 8px;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.video-container iframe:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Buy button styling */
+.buy-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:30px 0;
+}
+
+.buy-button {
+    background-color: #29abe2;
+    color: #ffffff;
+    padding: 15px 35px;
+    border-radius: 70px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(31, 179, 242, 0.6);
+    animation: pulse-button 2.5s infinite;
+}
+
+.buy-button:hover {
+    background-color: #29abe2;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(41, 171, 226, 0.9);
+}
+
+/* Pulsate animation for the button */
+@keyframes pulse-button {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Price increase note styling */
+.price-increase-note {
+    font-size: 0.9em;
+    color: #b3b3b3; /* Softer, subtle gray */
+    margin-top: 10px;
+    font-style: italic;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+
+
+
+
+
+.price-note {
+    background-color: #2a2a2a; /* Slightly lighter background */
+    color: #ffd700;
+    padding: 18px;
+    border-radius: 8px;
+    margin-top: 30px; /* Increase this value to add more space */
+    margin-bottom: 25px;
+    font-size: 1em;
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    animation: pulsate 2s infinite;
+}
+
+
+
+.price-note strong {
+    color: #fffbe6; /* Softer yellow for the emphasized text */
+}
+
+@keyframes pulsate {
+    0% {
+        border-color: rgba(255, 215, 0, 0.5);
+        color: #ffd700;
+        box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        border-color: rgba(255, 215, 0, 1);
+        color: #fff700;
+        box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.6);
+    }
+    100% {
+        border-color: rgba(255, 215, 0, 0.5);
+        color: #ffd700;
+        box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.3);
+    }
+}
+
+
+/* Footer styling */
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.9em;
+    color: #888888;
+}
+
+footer a {
+    color: #29abe2;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+/* Matrix Canvas Gradient Overlay */
+#matrix-canvas::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 50, 0.4), rgba(0, 50, 100, 0.4));
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.5; /* Adjust opacity as needed */
+}
+
+/* Matrix canvas styling */
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.15;
+}
+
+/* Keyframes for animated border */
+@keyframes pulse-border {
+    0% {
+        border-color: #ff5e5e;
+        box-shadow: 0 0 6px rgba(255, 101, 101, 0.4);
+    }
+    50% {
+        border-color: #d14040;
+        box-shadow: 0 0 20px rgba(209, 64, 64, 0.6);
+    }
+    100% {
+        border-color: #ff5e5e;
+        box-shadow: 0 0 6px rgba(255, 101, 101, 0.4);
+    }
+}
+
+
+
+/* Matrix canvas styling with larger characters and blur */
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.15;
+    filter: blur(2px); /* Slight blur effect */
+}
+
+/* Moving Gradient Background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #141e30, #243b55, #141e30);
+    background-size: 200% 200%;
+    animation: gradientMove 15s ease infinite;
+    z-index: 0; /* Behind other content */
+    opacity: 0.15; /* Subtle effect */
+    pointer-events: none; /* Let interactions pass through */
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Hide tweet animation containers on screens 600px wide or smaller */
+@media (max-width: 600px) {
+    .tweet-animation-container {
+        display: none;
+    }
+}
+
+
+/* General styling for the section */
+.why-buy-section {
+    background-color: #141414;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.6);
+    color: #e0e0e0;
+    text-align: center;
+    max-width: 800px;
+    margin: -5px auto; /* Adjust this margin to reduce spacing above */
+}
+
+/* Title styling */
+.why-buy-section h2 {
+    font-size: 1.8em; /* Slightly smaller title size */
+    color: #29abe2;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Text content styling */
+.why-buy-section p {
+    font-size: 1em; /* Normal paragraph size */
+    line-height: 1.4;
+    color: #cccccc;
+    margin-top: 8px;
+}
+
+/* Subtitle styling for 'Here's what you'll gain' */
+.why-buy-section h3 {
+    font-size: 1.1em; /* Smaller subtitle size */
+    color: #e0e0e0;
+    font-weight: 600;
+    margin: 15px 0;
+    position: relative;
+    display: inline-block;
+}
+
+/* Blue underline styling for h3 */
+.why-buy-section h3::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #29abe2; /* Blue color for the underline */
+    margin-top: 5px; /* Space between text and underline */
+    opacity: 0.8;
+    transform: scaleX(0); /* Start hidden */
+    transform-origin: left; /* Animate from left to right */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Hover effect for underline */
+.why-buy-section h3:hover::after {
+    transform: scaleX(1); /* Reveal underline on hover */
+}
+
+/* Additional styling for added elegance */
+.why-buy-section h2, .why-buy-section h3 {
+    letter-spacing: 0.5px;
+}
+
+.why-buy-section p.important {
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 12px;
+}

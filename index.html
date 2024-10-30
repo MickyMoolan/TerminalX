@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal X - Master Tweet Automation</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include the Poppins font for a modern, clean look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/embed/x44ngu640g.js" async type="module"></script>
+    <style>
+        wistia-player[media-id='x44ngu640g']:not(:defined) { 
+            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/x44ngu640g/swatch'); 
+            display: block; 
+            filter: blur(5px); 
+            padding-top: 60.0%; 
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Matrix Canvas -->
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Left and Right Tweet Animation Containers -->
+    <div class="tweet-animation-container left"></div>
+    <div class="tweet-animation-container right"></div>
+
+    <div class="container">
+        <header>
+            <!-- Title with decryption animation -->
+            <h1 class="reveal-title">Terminal X: Unleash Tweet Mastery</h1>
+            <p>Unlock effortless brand growth and engagement with our step-by-step Twitter automation guide 🔓</p>
+        </header>
+        
+        <div class="scarcity-message">
+            <p>Limited Time Offer! 14 Days to Lock in Your Discounted Price! 🔥</p>
+        </div>
+
+        <div class="video-container">
+            <!-- Wistia Embed -->
+            <wistia-player media-id="x44ngu640g"></wistia-player>
+        </div>
+
+        <!-- Buy Now Button with Price Increase Note -->
+        <div class="buy-button-container">
+            <a href="https://buy.stripe.com/9AQ0436Qtcpn3ZuaEE" class="buy-button">Buy Now for $37</a>
+            <p class="price-increase-note">Price increasing to $97 soon!</p>
+        </div>
+
+        <!-- Why Buy Section, now above the Note section -->
+        <div class="why-buy-section">
+            <h2>Why choose Terminal X?</h2>
+            <p>Unlock Twitter automation that’s fast, scalable, and impactful. Terminal X equips you to maximize engagement, reach thousands effortlessly, and keep your brand active 24/7—all on autopilot. Get set up quickly, so you can focus on growth while your system handles the rest.</p>
+            
+            <p style="border-bottom: 2px solid #29abe2; padding-bottom: 3px; display: inline-block;"><strong>Here’s what you’ll gain:</strong></p>
+            
+            <p>🔹 <strong>Immediate ROI:</strong> Start automating today and reclaim hours. Terminal X handles the repetitive tasks, letting you focus on growth.</p>
+            
+            <p>🔹 <strong>Scalable System:</strong> Adaptable for any strategy—whether you’re scheduling hundreds or thousands of posts, Terminal X grows with you.</p>
+            
+            <p>🔹 <strong>Effortless Engagement:</strong> Keep your audience engaged 24/7 with automatic, consistent posts—even while you’re offline.</p>
+            
+            <p>Terminal X equips you to quickly build a self-sustaining system. Ready to automate and maximize your Twitter strategy? Get started with Terminal X and see results from Day 1.</p>
+        </div>
+
+        <!-- Price Note Section, now below the Why Buy Section -->
+        <div class="price-note">
+            <p>💡 <strong>Note:</strong> The only other required cost is for OpenAI Credits (~$5-10/month) to power your tweet automation. Get started affordably, and scale your impact as your success grows.</p>
+        </div>
+        
+        <footer>
+            <p>Need help? <a href="mailto:terminalx709@gmail.com?subject=Support%20Request%20for%20Terminal%20X" target="_blank">Contact Support</a></p>
+
+
+        </footer>
+    </div>
+
+    <!-- Chatbot Integration -->
+    <div style="width: 0; height: 0;" id="VG_OVERLAY_CONTAINER">
+        <!-- Here is where TIXAE Agents renders the widget. -->
+    </div>
+
+    <script defer>
+        (function() {
+            window.VG_CONFIG = {
+                ID: "bwa98yvbgiq5nhrc",
+                region: 'eu',
+                render: 'bottom-right',
+                stylesheets: [
+                    "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css",
+                ],
+            }
+            var VG_SCRIPT = document.createElement("script");
+            VG_SCRIPT.src = "https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js";
+            VG_SCRIPT.defer = true;
+            document.body.appendChild(VG_SCRIPT);
+        })()
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
